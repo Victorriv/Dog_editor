@@ -1,6 +1,6 @@
 class SessionController < ApplicationController 
  #login and logout
-
+  skip_before_action :authorize, only: :create
     #login
     def create
       shelter = Shelter.find_by(name: params[:shelter_id]) 

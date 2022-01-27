@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-
+  
+  before_action :authorize
   #to-do
   
   #back end:
@@ -17,5 +18,14 @@ class ApplicationController < ActionController::API
   #dog update form
   #dog delete button
 #to get this to work WE GOTTA TEST FETCH CALLS
+
+
+private 
+
+def authorize
+@current_shelter = Shelter.find(session[:shelter_id])
+#throw and error unless current shelter exists
+render json: {errors: "Not authorized"} unless @current_shelter 
+end
 
 end

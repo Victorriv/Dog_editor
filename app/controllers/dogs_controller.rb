@@ -5,6 +5,8 @@ class DogsController < ApplicationController
     # delete a dog (destroy)
     #maybe see one specific dog
 
+    skip_before_action :authorize
+
     def index
         dogs = Dog.all
         render json: dogs
