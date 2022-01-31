@@ -25,7 +25,7 @@ private
 def authorize
 @current_shelter = Shelter.find(session[:shelter_id])
 #throw and error unless current shelter exists
-render json: {errors: "Not authorized"} unless @current_shelter 
+render json: {errors: "Not authorized"}, status: unauthorized unless @current_shelter 
 end
 
 end

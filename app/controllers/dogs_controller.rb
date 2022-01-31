@@ -5,7 +5,7 @@ class DogsController < ApplicationController
     # delete a dog (destroy)
     #maybe see one specific dog
 
-    skip_before_action :authorize
+    #skip_before_action :authorize
 
     def index
         dogs = Dog.all
@@ -19,7 +19,8 @@ class DogsController < ApplicationController
     end
 
     def update 
-        dog = Dog.update(dog_params)
+        dog = Dog.find(params[:id])
+        dog.update(dog_params)
         render json: dog
 
     end 
@@ -39,7 +40,7 @@ class DogsController < ApplicationController
     private 
 
     def dog_params
-        params.permit(:name, :age, :breed, :shelter_id)
+        params.require(:dog).permit(:name, :age, :breed, :shelter_id)
 
     end 
 

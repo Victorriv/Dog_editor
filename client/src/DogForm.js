@@ -1,12 +1,16 @@
 import {useState} from "react"
 
-function DogForm (){
+function DogForm ({shelter, addDog}){
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
     const [breed, setBreed] = useState("")
 
     function handleSubmit (e){
         e.preventDefault()
+        setName("")
+        setAge(0)
+        setBreed("")
+
         fetch("/dogs",{
             method: "POST",
             head: {
@@ -15,16 +19,18 @@ function DogForm (){
             body: JSON.stringify({
                 name,
                 age,
-                breed
+                breed,
+                shelter_id: shelter.id
             }),
-        }).then((r)=> {
-
         })
+        .then(r => r.json())
+        .then(t => addDog(t))
     }
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
+                <h2> New Dog </h2>
                 <label> Name: </label>
                 <input type= "text" id="name" value={name} onChange={e => setName(e.target.value)}/>
                 <label> Age: </label>

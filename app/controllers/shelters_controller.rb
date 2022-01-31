@@ -2,7 +2,7 @@ class SheltersController < ApplicationController
 #should be able to make new shelters
 #be able to see shelters( show action )
 
-skip_before_action :authorize
+skip_before_action :authorize, only: :create
 #, only: :create
 
 def index
@@ -11,9 +11,10 @@ def index
 end
 
 def show
-    shelter = Shelter.find(params[:id])
+    #shelter = Shelter.find(params[:id])
     #shelter = Shelter.find(@current_shelter.id)
-    render json: shelter
+    #render json: shelter
+    render json: @current_shelter
 end
 
 
