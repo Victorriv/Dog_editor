@@ -4,14 +4,14 @@ import DogCard from "./DogCard"
 import DogForm from "./DogForm"
 
 
-function Dogs({shelter}) {
+function Dogs({user}) {
     const [dogs, setDogs] = useState([])
 
     function removeDog(dog){
         setDogs((dogs)=> dogs.filter(t => t.id !== dog.id))
     }
 
-    function addDog(dog){
+    function addDog(dog){ 
         setDogs([...dogs, dog])
     }
 
@@ -25,30 +25,36 @@ function Dogs({shelter}) {
         setDogs(edited)
     }
 
-    useEffect(()=>{
-        fetch("/dogs")
+    // useEffect(()=>{
+    //     fetch("/dogs")
+    //     .then((r) => {
+    //         console.log(r)
+    //         r.json()
+    //         })
+    // }, [])
+
+    useEffect(() => {
+        fetch(`/dogs`)
         .then((r) => r.json())
-        .then(setDogs)
-    }, [])
+        .then(setDogs)    
+        }, [] )
+    
 
- /*
 
- {dogs.map((d)=>(
-            <DogCard dog = {d}  key= {d.id} />
-
-        ))}
-*/
-
-    return(
-
+    return (
+        
         <div>
-            <h1>Dogs</h1>
+            <h1>Dog</h1>
             <Link to={`/about`}><h4>About</h4></Link>
-            {dogs.map(t => <DogCard editDog={editDog} dog={t} key={t.id} removeDog={removeDog} shelter={shelter}/>)}
-            <DogForm shelter={shelter} addDog={addDog}/>
+            {dogs.map(t => <DogCard editDog={editDog} dog={t} key={t.id} removeDog={removeDog} user={user}/>)}
+            <DogForm user={user} addDog = {addDog} />
         </div>
-    )
+        
+    );
 
 }
 
+
 export default Dogs
+
+

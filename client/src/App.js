@@ -2,36 +2,37 @@ import './App.css';
 import DogForm from './DogForm';
 import Dogs from './Dogs';
 import { Route, Switch} from 'react-router-dom';
-import {useEffect, useState} from "react";
+import {useState, useEffect } from "react";
 import Login from "./Login"
 import About from "./About"
 
 function App() {
-  const [shelter, setShelter] = useState(null)
+  const [user, setUser] = useState(null)
 
   
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((shelter) => setShelter(shelter));
+        r.json().then((user) => setUser(user));
       }
     });
   }, []);
 
   function handleLogout(){
     fetch("/logout", {method: "DELETE"}).then(r => {
-      setShelter(null)
+      setUser(null)
     })
   }
 
-  if (!shelter) return <Login putShelter ={setShelter} />
+  if (!user) return <Login setUser ={setUser} />
   return (
     <>
     <main>
      <Switch>
-          <Route exact path = "/">
-            < Dogs shelter= {shelter}/>
+          <Route exact path ="/">
+            <Dogs user={user}/>
+          
             <button onClick={handleLogout}> Logout </button>
           </Route>
 

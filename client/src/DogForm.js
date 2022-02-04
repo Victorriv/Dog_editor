@@ -1,6 +1,6 @@
-import {useState} from "react"
+import { useState } from "react"
 
-function DogForm ({shelter, addDog}){
+function DogForm ({user, addDog}){
     const [name, setName] = useState("")
     const [age, setAge] = useState("")
     const [breed, setBreed] = useState("")
@@ -20,7 +20,7 @@ function DogForm ({shelter, addDog}){
                 name,
                 age,
                 breed,
-                shelter_id: shelter.id
+                user_id: user.id
             }),
         })
         .then(r => r.json())

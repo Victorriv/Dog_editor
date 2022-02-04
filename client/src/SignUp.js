@@ -1,19 +1,19 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 
-function SignUp({putShelter}){
-    const [shelter, setShelter] = useState("")
+function SignUp({setUser}){
+    const [username, setUsername] = useState("")
 
     function handleSubmit(e){
         e.preventDefault() // 33:00
-        fetch("/shelter", {
+        fetch("/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             }, 
-            body: JSON.stringify({shelter}),
+            body: JSON.stringify({username}),
         }).then(r => {
             console.log(r)
-            r.json().then(shelter => putShelter(shelter))
+            r.json().then(user => setUser(user))
 
         })
 
@@ -24,9 +24,9 @@ function SignUp({putShelter}){
             <form onSubmit = {handleSubmit}>
                 <label>  Create an Account: </label>
                 <input type= "text" 
-                        id = "shelter"
-                        value = {shelter}
-                        onChange= {e => setShelter(e.target.value) }
+                        id = "username"
+                        value = {username}
+                        onChange= {e => setUsername(e.target.value) }
                 
                 
                 />

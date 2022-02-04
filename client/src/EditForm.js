@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-function EditForm({dog, shelter, editDog, handleEditButtonClick}){
+function EditForm({dog, user, editDog, handleEditButtonClick}){
     const [name, setName] = useState(dog.name)
     const [age, setAge] = useState(dog.age)
     const [breed, setBreed] = useState(dog.breed)
@@ -10,6 +10,7 @@ function EditForm({dog, shelter, editDog, handleEditButtonClick}){
         setName("")
         setAge(0)
         setBreed("")
+        
         fetch(`/dogs/${dog.id}`, {
             method: "PATCH",
             headers: {
@@ -19,7 +20,7 @@ function EditForm({dog, shelter, editDog, handleEditButtonClick}){
                 name,
                 age,
                 breed,
-                shelter_id: shelter.id
+                user_id: user.id
             }),
         })
           .then(r => r.json())
@@ -36,7 +37,7 @@ function EditForm({dog, shelter, editDog, handleEditButtonClick}){
             <input type="text" id="name" value={name} onChange={e => setName(e.target.value)}/>
             <label>Age </label> 
             <input type="number" id="age" value={age} onChange={e => setAge(e.target.value)}/>
-            <label>Favorite Food </label>
+            <label>Breed </label>
             <input type="text" id="breed" value={breed} onChange={e => setBreed(e.target.value)}/>
             <input type="submit"/>
         </form>

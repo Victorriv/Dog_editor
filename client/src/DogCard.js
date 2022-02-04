@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import EditForm from "./EditForm"
 
-function DogCard({dog, removeDog, shelter, editDog}) {
+function DogCard({dog, removeDog, user, editDog}) {
     const [editForm, setEditForm] = useState(false)
     const [editButton, setEditButton] = useState("Show Edit Form")
 
@@ -17,16 +17,21 @@ function DogCard({dog, removeDog, shelter, editDog}) {
         !editForm ? setEditButton("Hide Edit Form") : setEditButton("Show Edit Form")
     }
 
+   
+
 
     return (
         <div>
-            {/*<h1> Dog Card </h1>*/}
+            
             <p> Name: {dog.name} </p>
             <p> Age: {dog.age} </p>
             <p> Breed: {dog.breed} </p>
-            <button onClick={e => handleDelete (dog)} > Delete </button>
+
+            <button onClick={e => handleDelete(dog)} > Delete </button>
+
             <button onClick={e => handleEditButtonClick()}>{editButton}</button>
-            {editForm ? <EditForm handleEditButtonClick={handleEditButtonClick} editDog={editDog} dog={dog} shelter={shelter}/> : null}
+            
+            {editForm ? <EditForm handleEditButtonClick={handleEditButtonClick} editDog={editDog} dog={dog} user={user}/> : null}
         </div>
 
     )
