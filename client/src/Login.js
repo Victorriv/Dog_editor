@@ -1,6 +1,9 @@
 import React, {useState} from "react"
 import SignUp from "./SignUp"
 
+
+// render a login form on depending on loginForm
+//LOGIN FORM
 function Login({setUser}){
     const [username, setUsername] = useState("")
 
@@ -31,7 +34,7 @@ function Login({setUser}){
                         type= "text" 
                         id = "username"
                         value = {username}
-                        onChange= {e => setUsername(e.target.value) }
+                        onChange= {e => setUsername(e.target.value)}
                 
                 
                      />

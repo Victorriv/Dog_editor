@@ -1,5 +1,5 @@
 import './App.css';
-import DogForm from './DogForm';
+//import DogForm from './DogForm';
 import Dogs from './Dogs';
 import { Route, Switch} from 'react-router-dom';
 import {useState, useEffect } from "react";
@@ -7,7 +7,7 @@ import Login from "./Login"
 import About from "./About"
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState("")
 
   
   useEffect(() => {
@@ -25,7 +25,7 @@ function App() {
     })
   }
 
-  if (!user) return <Login setUser ={setUser} />
+  if (!user) return <Login setUser ={setUser} /> //this loads first and it wont show anything else in return
   return (
     <>
     <main>

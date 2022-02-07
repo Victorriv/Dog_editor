@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 
+//SIGNUP FORM
 function SignUp({setUser}){
     const [username, setUsername] = useState("")
 
