@@ -1,17 +1,16 @@
 class DogsController < ApplicationController
 
-    skip_before_action :authorize
+    #skip_before_action :authorize
 
     
      def index
         dogs = Dog.all
         render json: dogs
-    end
+     end
 
     def create
         dog = Dog.create(dog_params)
         render json: dog
-
     end
 
     def update 

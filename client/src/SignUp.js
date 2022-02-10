@@ -31,7 +31,7 @@ function SignUp({setUser}){
                 
                 
                 />
-
+                <button type= "Submit"> SignUp </button>
             </form>
 
         </div>

@@ -14,13 +14,13 @@ function Login({setUser}){
             headers: {
                 "Content-Type": "application/json",
             },
-            
             body: JSON.stringify({username}),
-        }).then(r => {
+        })
+        .then(r => {
             console.log(r)
-            r.json().then(user => setUser(user));
+             r.json().then(user => setUser(user));
 
-        });
+         });
 
     }
 
@@ -38,7 +38,7 @@ function Login({setUser}){
                 
                 
                      />
-
+                    <button type= "Submit"> Login</button>
             </form>
             <h4> Need to create an account? </h4>
             <SignUp setUser={setUser}/>

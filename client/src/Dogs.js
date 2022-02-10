@@ -47,7 +47,7 @@ function Dogs({user}) {
         <div>
             <h1>Dog</h1>
             <Link to={`/about`}><h4>About</h4></Link>
-            {dogs.map(t => <DogCard user={user} editDog={editDog} dog={t} key={t.id} removeDog={removeDog} />)}
+            {dogs.map(t => <DogCard user={user} editDog={editDog} key={t.id} dog={t} removeDog={removeDog} />)}
             <DogForm user={user} addDog={addDog} />
         </div>
         
