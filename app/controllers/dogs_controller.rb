@@ -32,6 +32,7 @@ class DogsController < ApplicationController
 
     end
 
+
     private 
 
     def dog_params

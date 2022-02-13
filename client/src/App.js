@@ -35,7 +35,7 @@ function App() {
           
             <button onClick={handleLogout}> Logout </button>
           </Route>
-
+            <Route exact path="/new"></Route>
         <Route exact path="/about">
          <About/>
         </Route>

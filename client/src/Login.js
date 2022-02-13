@@ -15,15 +15,15 @@ function Login({setUser}){
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({username}),
-        })
-        .then(r => {
+        }).then(r => {
             console.log(r)
              r.json().then(user => setUser(user));
 
          });
 
+      
     }
-
+        
     return (
 
         <div>
@@ -35,8 +35,6 @@ function Login({setUser}){
                         id = "username"
                         value = {username}
                         onChange= {e => setUsername(e.target.value)}
-                
-                
                      />
                     <button type= "Submit"> Login</button>
             </form>

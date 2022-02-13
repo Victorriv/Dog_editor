@@ -2,9 +2,6 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
   before_action :authorize
 
-  # def create
-  #   session[:user_id] = user.id
-  # end 
 
   private 
 
