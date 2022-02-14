@@ -7,14 +7,6 @@ import DogForm from "./DogForm"
 function Dogs({user}) {
     const [dogs, setDogs] = useState([])
     
-    // function sortBy()
-    
-    //      {
-    //     fetch("/dogs/sort") 
-    //         .then((res) => res.json())
-    //         .then((dogs) => setDogs(dogs));
-    // };
-
 
     function removeDog(dog){
         setDogs((dogs)=> dogs.filter(t => t.id !== dog.id))
