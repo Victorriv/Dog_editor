@@ -40,7 +40,7 @@ function Dogs({user}) {
      return (
         
         <div>
-            <h1>Dog</h1>
+            <h1>Dogs List</h1>
             <Link to={`/about`}><h4>About</h4></Link>
             {dogs.map(t => <DogCard user={user} editDog={editDog} key={t.id} dog={t} removeDog={removeDog} />)}
             <DogForm user={user} addDog={addDog} />
