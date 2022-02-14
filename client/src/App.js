@@ -16,7 +16,7 @@ function App() {
         r.json().then((user) => setUser(user))}
       }
       )
-    }, []);
+    }, [])
 
   function handleLogout(){
     fetch("/logout", {method: "DELETE"}).then(r => {
