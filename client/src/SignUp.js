@@ -4,6 +4,9 @@ import React, { useState } from "react"
 function SignUp({setUser}){
     const [username, setUsername] = useState("")
 
+
+
+
     function handleSubmit(e){
         e.preventDefault() 
         fetch("/users", {
@@ -39,3 +42,5 @@ function SignUp({setUser}){
 }
 
 export default SignUp
+
+

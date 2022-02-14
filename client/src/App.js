@@ -6,6 +6,7 @@ import {useState, useEffect } from "react";
 import Login from "./Login"
 import About from "./About"
 
+
 function App() {
   const [user, setUser] = useState("")
 
@@ -16,7 +17,7 @@ function App() {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
-    });
+    })
   }, []);
 
   function handleLogout(){
@@ -25,7 +26,7 @@ function App() {
     })
   }
 
-  if (!user) return <Login setUser ={setUser} /> //this loads first and it wont show anything else in return
+  if (!user) return <Login setUser ={setUser} /> 
   return (
     <>
     <main>
@@ -51,29 +52,3 @@ function App() {
 
 export default App;
 
-/*
-
-<div className="App">
-      <header className="App-header"> 
-      <Dogs/>
-      <DogForm/>
-      </header>
-    </div>
-
-
-     <>
-    <main>
-     <Switch>
-          <Route path = "/new">
-            <DogFrom/>
-          </Route>
-
-        <Route path="/">
-         <Dogs/>
-        </Route>
-
-      </Switch>
-    </main>
-    
-    </>
-*/
