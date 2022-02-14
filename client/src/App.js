@@ -6,7 +6,6 @@ import {useState, useEffect } from "react";
 import Login from "./Login"
 import About from "./About"
 
-
 function App() {
   const [user, setUser] = useState("")
 

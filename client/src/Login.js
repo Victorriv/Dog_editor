@@ -6,7 +6,6 @@ import SignUp from "./SignUp"
 //LOGIN FORM
 function Login({setUser}){
     const [username, setUsername] = useState("")
-   
 
     function handleSubmit(e){
         e.preventDefault()
@@ -47,7 +46,3 @@ function Login({setUser}){
 }
 
 export default Login
-
-
-
-
