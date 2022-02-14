@@ -10,7 +10,7 @@ function Dogs({user}) {
     // function sortBy()
     
     //      {
-    //     fetch("/dogs/sort") THE FETCH TO SORT IT FOR LIVE CODE
+    //     fetch("/dogs/sort") 
     //         .then((res) => res.json())
     //         .then((dogs) => setDogs(dogs));
     // };

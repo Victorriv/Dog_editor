@@ -22,10 +22,7 @@ class UsersController < ApplicationController
         else
           render json: { error: user.errors.full_messages }, status: :unprocessable_entity
         end 
-            #^^^ ALL THIS ADDED
-
-        # user = User.create(user_params)
-        # render json: user              (UNCOMMENT IF CODE ABOVE DONT WORK)
+            
     end
 
     def myDogs 
