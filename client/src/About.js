@@ -2,7 +2,7 @@ function About(){
     return (
         <>
             <h2>About Dogs</h2>
-            <p>Dogs</p>
+            <p>This will show you all the dogs that are here</p>
         </>
     )
 }
