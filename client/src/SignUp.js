@@ -32,6 +32,20 @@ function SignUp({setUser}){
                         id = "username"
                         value = {username}
                         onChange= {e => setUsername(e.target.value) } />
+
+                        <br/>
+                        <label> Password: </label>
+                        <input 
+                        type="text"
+                        id="password"
+                        value= {password}
+                        onChange={e => setPassword(e.target.value)}
+                        
+                        
+                        
+                        />
+
+                        <br/>
                 <button type= "Submit"> SignUp </button>
             </form>
 
