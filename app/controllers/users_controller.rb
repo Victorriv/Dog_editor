@@ -8,28 +8,20 @@ class UsersController < ApplicationController
     end
 
     def show
-        user = User.find(params[:id])
-     
-        render json: @current_user
+        user = User.find(session[:user_id])
+        session[:user_id] = user.id
+        render json: user  
     end
 
     #sign up
     def create
-        user = User.create(user_params)
-        if user.valid?
-          session[:user_id] = user.id
-          render json: user, status: :created
-        else
-          render json: { error: user.errors.full_messages }, status: :unprocessable_entity
-        end 
+        user = User.create!(user_params)
+        session[:user_id] = user.id
+        render json: user, status: :created
             
     end
 
-    def myDogs 
-        user = User.find(session[:user_id])
-        userDogs = user.dogs
-        render json: userDogs
-    end
+  
 
     private
     
