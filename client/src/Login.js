@@ -37,6 +37,15 @@ function Login({setUser}){
                         value = {username}
                         onChange= {e => setUsername(e.target.value)}
                      />
+
+                     <label> Password: </label>
+                     <input  
+                      type = "password"
+                      id = "password"
+                      autoComplete ="current-password"
+                      value = {password}
+                      onChange = {(e) => setPassword(e.target.value)}
+                     />
                     <button type= "Submit"> Login</button>
             </form>
             <h4> Need to create an account? </h4>

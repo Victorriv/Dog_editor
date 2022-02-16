@@ -30,15 +30,16 @@ function App() {
     <>
     <main>
      <Switch>
-          <Route exact path ="/">
+            <Route exact path ="/">
             <Dogs user={user}/>
           
             <button onClick={handleLogout}> Logout </button>
-          </Route>
+           </Route>
             <Route exact path="/new"></Route>
-        <Route exact path="/about">
-         <About/>
-        </Route>
+           <Route exact path="/about">
+           <About/>
+           
+          </Route>
 
       </Switch>
     </main>
