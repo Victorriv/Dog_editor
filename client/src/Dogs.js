@@ -28,7 +28,7 @@ function Dogs({user}) {
     }
 
    
-/// change more things on hereeeeeeeeeeeeeeeeeeeeee
+
     useEffect(() => {
         fetch(`/dogs`)
         .then((r) => r.json())
