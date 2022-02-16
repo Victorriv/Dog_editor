@@ -3,6 +3,7 @@ import React, { useState } from "react"
 //SIGNUP FORM
 function SignUp({setUser}){
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
 
     function handleSubmit(e){
         e.preventDefault() 
@@ -12,7 +13,8 @@ function SignUp({setUser}){
                 "Content-Type": "application/json",
             }, 
             body: JSON.stringify({
-                username
+                username,
+                password,
             }),
         }).then(r => {
             console.log(r)
