@@ -4,8 +4,8 @@ import React, { useState } from "react"
 function SignUp({setUser}){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [errors, setErrors] = useState("")
     
+
     function handleSubmit(e){
         e.preventDefault() 
         fetch("/users", {
@@ -19,10 +19,9 @@ function SignUp({setUser}){
             }),
         }).then(r => {
             console.log(r)
-            r.json().then(user => setUser(user))
+             r.json().then(user => setUser(user));
 
-        })
-
+         });
     }
 
     return(
@@ -48,6 +47,7 @@ function SignUp({setUser}){
 
                         <br/>
                 <button type= "Submit"> SignUp </button>
+                
             </form>
 
         </div>
