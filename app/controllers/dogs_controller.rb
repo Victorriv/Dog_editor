@@ -1,6 +1,7 @@
 class DogsController < ApplicationController
 
     
+           
 
     
      def index
@@ -26,11 +27,12 @@ class DogsController < ApplicationController
 
     end 
     
-    def show 
+    def show
         dog = Dog.find(params[:id])
         render json: dog
 
     end
+
 
 
     private 

@@ -18,6 +18,7 @@ function App() {
       )
     }, []);
   
+  
 
   function handleLogout(){
     fetch("/logout", {method: "DELETE"}).then(r => {
@@ -27,7 +28,7 @@ function App() {
 
   if (!user) return <Login setUser ={setUser} /> 
   return (
-    <>
+    <div className= "App">
     <main>
      <Switch>
             <Route exact path ="/">
@@ -44,7 +45,7 @@ function App() {
       </Switch>
     </main>
     
-    </>
+    </div>
     
    
   );

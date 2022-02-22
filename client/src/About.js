@@ -2,7 +2,7 @@ function About(){
     return (
         <>
             <h2>About Dogs</h2>
-            <p>This will show you all the dogs that are here</p>
+            <p>Hello, This app will show you a list of dogs, along with their name, age and breed</p>
         </>
     )
 }

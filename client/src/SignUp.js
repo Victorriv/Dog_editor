@@ -25,7 +25,7 @@ function SignUp({setUser}){
     }
 
     return(
-        <div>
+        <div className= "App">
             <form onSubmit = {handleSubmit}>
                 <label>  Create an Account: </label>
                 <input type= "text" 
@@ -36,7 +36,7 @@ function SignUp({setUser}){
                         <br/>
                         <label> Password: </label>
                         <input 
-                        type="text"
+                        type="password"
                         id="password"
                         value= {password}
                         onChange={e => setPassword(e.target.value)}
