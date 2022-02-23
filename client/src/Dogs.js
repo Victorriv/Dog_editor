@@ -29,12 +29,14 @@ function Dogs({user}) {
 
    
 
-    useEffect(() => {
-        fetch(`/dogs`)
+    useEffect(()=> {
+        fetch(`/users/${user.id}`)
         .then((r) => r.json())
-        .then(setDogs)    
-        }, [] )
-    
+        .then((d) => {
+            setDogs(d.dogs)
+        })
+    }, [])  
+
 
    
 

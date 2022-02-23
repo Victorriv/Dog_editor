@@ -46,6 +46,7 @@ function SignUp({setUser}){
                         />
 
                         <br/>
+                        
                 <button type= "Submit"> SignUp </button>
                 
             </form>

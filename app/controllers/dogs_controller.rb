@@ -3,7 +3,13 @@ class DogsController < ApplicationController
     
            
 
-    
+    def by_age
+        dogs = Dog.by_ages
+        render json: dogs
+    end
+
+
+
      def index
         dogs = Dog.all
         render json: dogs
@@ -16,16 +22,25 @@ class DogsController < ApplicationController
 
     def update 
         dog = Dog.find(params[:id])
-        dog.update(dog_params)
-        render json: dog
-
+        if @current_user.id == dog.user.id
+          dog.update(dog_params)
+          render json: dog
+        else
+            render json: { errors: ["Dog(s) cant be accessed"] }, status: :unauthorized
+        end
     end  
     
 
     def destroy
-        dog = Dog.find(params[:id])
-        dog.destroy
+        if @current_user.id == dog.user.id
+         dog = Dog.find(params[:id])
+         dog.destroy
 
+        else
+
+            render json: { errors: ["Dog(s) cant be Accessed"] }, status: :unauthorized
+
+        end
     end 
     
     def show

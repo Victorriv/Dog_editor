@@ -6,7 +6,7 @@ Rails.application.routes.draw do
  
   post '/login', to: 'sessions#create'
   delete '/logout', to:  'sessions#destroy'
-  
+  get '/dog/organize', to: 'dogs#by_age'
  
   get "/me", to: "users#show"
   
